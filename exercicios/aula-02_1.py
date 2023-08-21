@@ -1,10 +1,8 @@
-# Primeira questão
+# Exercício 1
 
 import pandas as pd
 
-# Primeiro item (script R)
-
-# Segundo item
+# Item (b)
 
 desvio_padrao = {'Aeolus':0.071,'Barton Hill':0.070,'Graphite':0.074,'Hibernia':0.069,'Williams Hotel':0.035,'Williams Preserve':0.042}
 media = {'Aeolus':0.122,'Barton Hill':0.168,'Graphite':0.176,'Hibernia':0.161,'Williams Hotel':0.179,'Williams Preserve':0.259}
@@ -17,10 +15,82 @@ cvs_percentual = cvs*100
 cvs_percentual_ordenados = cvs_percentual.sort_values()
 print(cvs_percentual_ordenados)
 
-# Terceiro item
+# Item (c)
 Q1 = 0.067
 Q3 = 0.164
 LS = Q3 + 1.5 * (Q3 - Q1)
 LI = Q1 - 1.5 * (Q3 - Q1)
 print(LS)
 print(LI)
+
+# Exercício 2
+
+# Item (a)
+
+# Cálculo das frequências relativas
+# print(h/base*100) = fr (em %)
+
+# Primeira fr
+print('Primeira fr',(0.685*0.05)*100)
+fr1 = (0.685*0.05)
+# f
+print('f1',fr1*555)
+
+# Segunda fr
+print('Segunda fr',(4.631*(0.15-0.05))*100)
+fr2 = 4.631*(0.15-0.05)
+# f2
+print('f2',fr2*555)
+
+# Porcentagem acumulada
+print('Porcentagem acumulada',3.43+46.31)
+
+# Terceira fr
+print('Terceira fr',(4.252*(0.2-0.15))*100)
+fr3 = 4.252*(0.2-0.15)
+
+# f3
+print('f3',fr3*555)
+
+# Porcentagem acumulada
+print('Porcentagem acumulada',49.74 + 21.26)
+
+# Quarta fr
+print('Quarta fr',(2.45*(0.3-0.2))*100)
+fr4 = 2.45*(0.3-0.2)
+
+# f4
+print('f4',fr4*555)
+
+# Porcentagem acumulada
+print('Porcentagem acumulada',71+24.50)
+
+# Quinta fr
+print('Quinta fr',(0.829*(0.35-0.3))*100)
+fr5 = 0.829*(0.35-0.3)
+
+# f5
+print('f5',fr5*555)
+
+# Porcentagem acumulada
+print('Porcentagem acumulada',95.5+4.14)
+
+# Sexta fr
+print('Sexta fr',(0.072*(0.4-0.35))*100)
+fr6 = 0.072*(0.4-0.35)
+
+# f6
+print('f6',fr6*555)
+
+# Porcentagem acumulada
+print('Porcentagem acumulada',99.64+0.36)
+
+# prova
+print(19+257+118+136+23+2)
+
+# Q3 aproximado
+# 4% representa x% de 24,50%. x% de 0,1 = y. 0,2 + y = q3 aproximado
+x = (4/24.50) * 100
+y = 0.1633*0.1
+q3 = 0.2 + 0.0163
+

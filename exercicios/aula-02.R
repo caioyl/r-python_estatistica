@@ -17,3 +17,5 @@ numSummary(Dataset_Morcegos[,"porct.gordura", drop=FALSE], groups=Dataset_Morceg
 # Boxplot Aeolus
 Boxplot(porct.gordura ~ local, data=Dataset_Morcegos, id=list(method="y"))
 
+#Histograma classes iguais (frequência)
+with(Dataset_Morcegos, Hist(porct.gordura, scale="frequency", breaks="Sturges", col="darkgray"))
