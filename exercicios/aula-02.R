@@ -1,6 +1,7 @@
 # Carregar as bibliotecas
 
 library(Rcmdr)
+library(colorspace)
 
 # Leitura do arquivo
 Dataset_Morcegos <- readXL("C:/Users/caioy/Documents/GitHub/r-python_estatistica/dados/Morcegos_Cheng.xlsx", 
