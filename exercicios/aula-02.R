@@ -35,3 +35,10 @@ with(Dataset_Morcegos, piechart(local, xlab="", ylab="", main="Porcentagem de di
 # Gráfico pizza (Anos em porcentagem)
 with(Dataset_Morcegos, piechart(ano, xlab="", ylab="", main="Anos em porcentagem", col=rainbow_hcl(2), 
                                 scale="percent"))
+
+# Agrupamento
+Dataset_Morcegos <- within(Dataset_Morcegos, {dias <- as.factor(dias)})
+
+# Resumo numérico por dias
+numSummary(Dataset_Morcegos[,"porct.gordura", drop=FALSE], groups=Dataset_Morcegos$dias, statistics=c("mean", "sd",
+                                                                                                      "IQR", "quantiles"), quantiles=c(0,.25,.5,.75,1))
