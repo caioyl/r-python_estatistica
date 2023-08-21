@@ -94,3 +94,17 @@ x = (4/24.50) * 100
 y = 0.1633*0.1
 q3 = 0.2 + 0.0163
 
+#Exercício 4
+
+# Item (a)
+
+dados = 'https://github.com/caioyl/r-python_estatistica/raw/main/dados/Morcegos_Cheng.xlsx'
+df = pd.read_excel(dados)
+df_novo = df.groupby('dias')
+#Todos os mínimos
+print(df.groupby('dias').min())
+
+#Todos os máximos
+print(df.groupby('dias').max())
+
+#Selecionando um valor em específico (não sei como fazer ainda)

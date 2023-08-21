@@ -1,4 +1,4 @@
-# Carregar a biblioteca
+# Carregar as bibliotecas
 
 library(Rcmdr)
 
@@ -17,5 +17,21 @@ numSummary(Dataset_Morcegos[,"porct.gordura", drop=FALSE], groups=Dataset_Morceg
 # Boxplot Aeolus
 Boxplot(porct.gordura ~ local, data=Dataset_Morcegos, id=list(method="y"))
 
-#Histograma classes iguais (frequência)
+# Histograma classes iguais (frequência)
 with(Dataset_Morcegos, Hist(porct.gordura, scale="frequency", breaks="Sturges", col="darkgray"))
+
+# Histograma classes iguais (percentual)
+with(Dataset_Morcegos, Hist(porct.gordura, scale="percent", breaks="Sturges", col="darkgray"))
+
+# Histograma classes iguais (densidade)
+with(Dataset_Morcegos, Hist(porct.gordura, scale="density", breaks="Sturges", col="darkgray"))
+
+# Boxplot variável y
+Boxplot( ~ porct.gordura, data=Dataset_Morcegos, id=list(method="y"))
+
+# Gráfico pizza (Local em porcentagem)
+with(Dataset_Morcegos, piechart(local, xlab="", ylab="", main="Porcentagem de dias por local", col=rainbow_hcl(6), scale="percent"))
+
+# Gráfico pizza (Anos em porcentagem)
+with(Dataset_Morcegos, piechart(ano, xlab="", ylab="", main="Anos em porcentagem", col=rainbow_hcl(2), 
+                                scale="percent"))
