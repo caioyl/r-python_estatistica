@@ -1,6 +1,7 @@
 # Exercício 1
 
 import pandas as pd
+import shutil
 
 # Item (b)
 
@@ -100,6 +101,10 @@ q3 = 0.2 + 0.0163
 
 dados = 'https://github.com/caioyl/r-python_estatistica/raw/main/dados/Morcegos_Cheng.xlsx'
 df = pd.read_excel(dados)
+
+valor_minimo = df.min()
+valor_maximo = df.max()
+
 df_novo = df.groupby('dias')
 #Todos os mínimos
 print(df.groupby('dias').min())
@@ -107,4 +112,24 @@ print(df.groupby('dias').min())
 #Todos os máximos
 print(df.groupby('dias').max())
 
-#Selecionando um valor em específico (não sei como fazer ainda)
+# Calcular os limites inferior e superior usando IQR
+q1 = df_novo.quantile(0.25)
+q3 = df_novo.quantile(0.75)
+iqr = q3 - q1
+
+# Criando Series com os limites
+lower_limit = q1 - 1.5 * iqr
+upper_limit = q3 + 1.5 * iqr
+
+lower_limit.rename(columns={'porct.gordura': 'limite inferior'}, inplace=True)
+upper_limit.rename(columns={'porct.gordura': 'limite superior'}, inplace=True)
+lower_limit.drop(columns=['ano'], inplace=True)
+upper_limit.drop(columns=['ano'], inplace=True)
+# print(upper_limit)
+#print(lower_limit)
+
+valor_minimo = df_novo.min()
+valor_maximo = df_novo.max()
+
+df_limites = pd.concat([lower_limit, upper_limit],axis=1)
+print(df_limites)

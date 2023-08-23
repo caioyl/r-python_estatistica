@@ -43,3 +43,5 @@ Dataset_Morcegos <- within(Dataset_Morcegos, {dias <- as.factor(dias)})
 # Resumo numérico por dias
 numSummary(Dataset_Morcegos[,"porct.gordura", drop=FALSE], groups=Dataset_Morcegos$dias, statistics=c("mean", "sd",
                                                                                                       "IQR", "quantiles"), quantiles=c(0,.25,.5,.75,1))
+
+
