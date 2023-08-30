@@ -126,10 +126,11 @@ upper_limit.rename(columns={'porct.gordura': 'limite superior'}, inplace=True)
 lower_limit.drop(columns=['ano'], inplace=True)
 upper_limit.drop(columns=['ano'], inplace=True)
 # print(upper_limit)
-#print(lower_limit)
+# print(lower_limit)
 
 valor_minimo = df_novo.min()
 valor_maximo = df_novo.max()
 
 df_limites = pd.concat([lower_limit, upper_limit],axis=1)
+df_limites.to_csv('boxplot-limites_morcegos_cheng.csv',index=False)
 print(df_limites)
